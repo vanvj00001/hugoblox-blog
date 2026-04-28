@@ -1,6 +1,6 @@
 baseURL = "https://vanvj00001.github.io/hugoblox-blog/"
 title = "神话传说"
-theme = "PaperMod"
+theme = "hugo-book"
 languageCode = "zh-cn"
 
 disablePathToLower = true
