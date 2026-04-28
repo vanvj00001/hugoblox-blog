@@ -1,0 +1,7 @@
+{{ if not (hasPrefix .Site.BaseURL "/papermod") }}
+  {{ if hasPrefix .Site.BaseURL "/hugo-book" }}
+  {{ end }}
+{{ end }}
+
+<!-- 跨主题切换脚本 -->
+<script src="{{ "js/cross-theme-switcher.js" | relURL }}"></script>
