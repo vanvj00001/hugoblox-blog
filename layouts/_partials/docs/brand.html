@@ -1,7 +1,4 @@
 <h2 class="book-brand">
-  <a class="theme-return-link" href="https://vanvj00001.github.io/monkvan/" title="返回主题选择" style="margin-right:0.35rem; display:inline-flex; align-items:center; color:inherit; text-decoration:none; opacity:0.85;">
-    <img src="{{ "icons/backward.svg" | relURL }}" alt="返回主题选择" style="width:1em; height:1em;" />
-  </a>
   <a class="flex align-center" href="{{ cond (not .Site.Home.File) .Sites.Default.Home.RelPermalink .Site.Home.RelPermalink }}">
     {{- with .Site.Params.BookLogo -}}
     <img src="{{ . | relURL }}" alt="{{ partial "docs/text/i18n" "Logo" }}" />
