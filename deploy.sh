@@ -45,6 +45,9 @@ else
   git checkout -B "${BRANCH}"  # create/force branch
   # Clean repo (keep .git only)
   git rm -r . --ignore-unmatch || true
+  # Remove any stray submodule entries (PaperMod is not needed for hugo_book)
+  git rm -f --cached themes/PaperMod 2>/dev/null || true
+  rm -rf .gitmodules 2>/dev/null || true
 fi
 
 # Copy generated site into the repository root
