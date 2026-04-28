@@ -25,15 +25,6 @@ mkdir -p "$BUILD_DIR"
 echo_info "完成"
 echo ""
 
-echo_blue "复制静态文件..."
-if [ -f "$SCRIPT_DIR/static/gold.html" ]; then
-    cp "$SCRIPT_DIR/static/gold.html" "$BUILD_DIR/"
-fi
-if [ -d "$SCRIPT_DIR/static/gold-data" ]; then
-    cp -r "$SCRIPT_DIR/static/gold-data" "$BUILD_DIR/"
-fi
-echo_info "完成"
-echo ""
 
 # Theme is managed manually; ensure the desired theme exists in themes/ directory
 
