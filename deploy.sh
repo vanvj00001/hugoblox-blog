@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Color helpers
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 BLUE='\033[0;34m'
@@ -11,58 +10,45 @@ echo_info() { echo -e "${GREEN}✓ $1${NC}"; }
 echo_error() { echo -e "${RED}✗ $1${NC}"; }
 echo_blue() { echo -e "${BLUE}→ $1${NC}"; }
 
-# -----------------------------------------------------------------------------
-# Configuration
-# -----------------------------------------------------------------------------
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-BUILD_DIR="${SCRIPT_DIR}/public"
 REMOTE="https://github.com/vanvj00001/hugoblox-blog.git"
-BRANCH="main"   # GitHub Pages serves the repository root on this branch
+BRANCH="gh-pages"
 
-# -----------------------------------------------------------------------------
-# Build the Hugo site
-# -----------------------------------------------------------------------------
+# ── Build ────────────────────────────────────────────────────────────────────
 echo_blue "🚀 构建 Hugo 站点..."
-# Use the extended version with minify for production
-hugo --minify
+rm -rf "${SCRIPT_DIR}/public"
+export HUGO_POSTCSS_ARGS="--allow-fs-read"
+hugo --minify --source "${SCRIPT_DIR}"
 echo_info "站点构建完成"
 
-# -----------------------------------------------------------------------------
-# Deploy
-# -----------------------------------------------------------------------------
-if [ -d "${SCRIPT_DIR}/.git" ]; then
-  echo_blue "⚙️ 检测到本目录已是 Git 仓库，使用本地仓库部署"
-  cd "${SCRIPT_DIR}"
-  # Ensure we are on the correct branch
-  git checkout "${BRANCH}" 2>/dev/null || git checkout -b "${BRANCH}"
-  # Remove everything except .git (ignore errors for missing files)
-  git rm -r . --ignore-unmatch || true
-else
-  echo_blue "⚙️ 未检测到 Git 仓库，克隆远程仓库进行部署"
-  TMPDIR=$(mktemp -d)
-  git clone "${REMOTE}" "${TMPDIR}"
-  cd "${TMPDIR}"
-  git checkout -B "${BRANCH}"  # create/force branch
-  # Clean repo (keep .git only)
-  git rm -r . --ignore-unmatch || true
-  # Remove any stray submodule entries (PaperMod is not needed for hugo_book)
-  git rm -f --cached themes/PaperMod 2>/dev/null || true
-  rm -rf .gitmodules 2>/dev/null || true
+# ── Deploy (isolated clone) ──────────────────────────────────────────────────
+DEPLOY_DIR=$(mktemp -d)
+trap 'rm -rf "$DEPLOY_DIR"' EXIT
+
+echo_blue "⚙️ 克隆部署仓库..."
+if ! git clone --single-branch --branch "${BRANCH}" "${REMOTE}" "${DEPLOY_DIR}" 2>/dev/null; then
+  git init "${DEPLOY_DIR}"
+  cd "${DEPLOY_DIR}"
+  git remote add origin "${REMOTE}" 2>/dev/null || true
 fi
 
-# Copy generated site into the repository root
-cp -r "${BUILD_DIR}/"* .
-# Ensure GitHub Pages ignores Hugo pipelines
+cd "${DEPLOY_DIR}"
+
+# Clean everything except .git
+find . -maxdepth 1 -not -name '.git' -not -name '.' -delete
+
+# Copy built site
+cp -r "${SCRIPT_DIR}/public/"* .
 touch .nojekyll
 
-# Commit and push
+# Commit and force-push
 git add -A
 if git diff --cached --quiet; then
   echo_info "没有新内容需要部署"
 else
   git commit -m "Deploy: $(date +'%Y-%m-%d %H:%M:%S')"
-  git push "${REMOTE}" "${BRANCH}" --force
-  echo_info "部署已推送到 ${REMOTE}" 
+  git push origin "${BRANCH}" --force
+  echo_info "部署已推送到 ${REMOTE}"
 fi
 
 echo ""

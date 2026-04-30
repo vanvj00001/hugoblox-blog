@@ -1,0 +1,45 @@
+{
+  "name": "vanvj0001",
+  "version": "1.0.0",
+  "description": "",
+  "main": "en.search.min.0d3a1b034aa646f9d2433976f8dfa03fe44a99626e854222de5fd599a2c19606.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vanvj00001/hugoblox-blog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/vanvj00001/hugoblox-blog/issues"
+  },
+  "homepage": "https://github.com/vanvj00001/hugoblox-blog#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.5.0",
+    "postcss": "^8.5.12",
+    "postcss-cli": "^11.0.1",
+    "tailwindcss": "^4.2.4"
+  },
+  "dependencies": {
+    "@fontsource/mulish": "^5.2.8",
+    "@fortawesome/fontawesome-free": "6.7.2",
+    "bootstrap": "^5.3.8",
+    "feather-icons": "^4.29.2",
+    "filterizr": "^2.2.4",
+    "flag-icons": "^7.5.0",
+    "fuse.js": "^7.3.0",
+    "highlight.js": "^11.11.1",
+    "imagesloaded": "^5.0.0",
+    "include-media": "^2.0.0",
+    "katex": "^0.16.45",
+    "mark.js": "^8.11.1",
+    "mermaid": "^11.14.0",
+    "plyr": "^3.8.4",
+    "popper.js": "^1.16.1",
+    "typeit": "^8.8.7"
+  }
+}

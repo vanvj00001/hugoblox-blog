@@ -1,58 +1,42 @@
 baseURL = "https://vanvj00001.github.io/hugoblox-blog/"
 title = "神话传说"
-theme = "hugo-book"
+theme = "PaperMod"
 languageCode = "zh-cn"
-
-disablePathToLower = true
+defaultContentLanguage = "zh-cn"
+disablPathToLower = true
 enableGitInfo = false
 
 [markup]
   [markup.goldmark.renderer]
     unsafe = true
 
-  [markup.tableOfContents]
-    startLevel = 1
-
-  [markup.highlight]
-    style = 'base16-snazzy'
-
-[taxonomies]
-  tag = 'tags'
-  category = 'categories'
-
+[params]
+  BookSection = "posts"
+  description = "神话传说博客"
+  images = ["favicon.png"]
+  
+  [params.author]
+    name = "老梵"
+  
+  [params.toha]
+    enableThemeToggle = true
+    defaultTheme = "auto"
+    
 [menu]
   [[menu.main]]
     name = '博客'
     url = '/posts/'
     weight = 1
-
   [[menu.main]]
     name = '标签'
     url = '/tags/'
     weight = 2
-
   [[menu.main]]
     name = '分类'
     url = '/categories/'
     weight = 3
-
   [[menu.main]]
     name = '关于'
     url = '/about/'
     weight = 4
-
-[languages]
-  [languages.en]
-    languageName = 'English'
-    weight = 1
-
-[params]
-  author = '老梵'
-  description = 'A blog for sharing thoughts and ideas'
-  BookTheme = 'auto'
-  BookSection = 'posts'
-  BookDateFormat = 'January 2, 2006'
-  BookSearch = true
-  BookComments = false
-  BookPortableLinks = false
 

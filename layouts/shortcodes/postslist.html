@@ -1,0 +1,6 @@
+<ul>
+{{ $posts := first 5 (where .Site.RegularPages "Section" "posts") }}
+{{ range $posts }}
+  <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+{{ end }}
+</ul>

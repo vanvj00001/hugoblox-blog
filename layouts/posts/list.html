@@ -1,0 +1,14 @@
+{{ define "main" }}
+<div class="td-content">
+<h1>{{ .Title }}</h1>
+{{ .Content }}
+</div>
+<ul class="td-blog-posts-list">
+{{ $posts := where .Site.RegularPages "Section" "posts" }}
+{{ range $posts }}
+<li class="td-blog-posts-list__item">
+  <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+</li>
+{{ end }}
+</ul>
+{{ end }}

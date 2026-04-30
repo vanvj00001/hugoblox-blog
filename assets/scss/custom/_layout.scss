@@ -1,0 +1,10 @@
+// 居中导航栏内容
+.navbar-nav {
+  justify-content: center;
+}
+
+// 确保页面内容居中
+.container-fluid {
+  max-width: 1200px;
+  margin: 0 auto;
+}
