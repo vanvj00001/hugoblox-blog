@@ -1,0 +1,10 @@
+/* Custom overrides for homepage layout */
+
+/* Ensure long lines break and don't overflow */
+.post-content,
+.markdown-body,
+.content {
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
