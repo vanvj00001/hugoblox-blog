@@ -1,0 +1,15 @@
+/* Fix homepage line overflow – apply to article content */
+article,
+.measure-wide,
+.content {
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+.main-content,
+.content,
+.markdown-body {
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
