@@ -1,0 +1,10 @@
+/* Fix homepage line overflow */
+
+/* Apply to main content containers */
+.main-content,
+.content,
+.markdown-body {
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
