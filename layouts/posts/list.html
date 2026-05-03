@@ -7,6 +7,7 @@
   <ul>
     <li><strong><a href="/categories/印度神话/">印度神话</a></strong> - 湿婆、毗湿奴、梵天三大主神及其家族的故事</li>
     <li><strong><a href="/categories/希腊神话/">希腊神话</a></strong> - 奥林匹斯众神、宙斯家族与英雄传说</li>
+    <li><strong><a href="/categories/罗马神话/">罗马神话</a></strong> - 朱庇特、尼普顿、普鲁托与罗马的永恒神话</li>
     <li><strong><a href="/categories/神话学/">神话学</a></strong> - 印欧语系神话框架与比较神话学研究</li>
   </ul>
 
@@ -32,6 +33,21 @@
     <h2 id="希腊神话">希腊神话</h2>
     <ul>
       {{ range $greekPages }}
+        <li>
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          {{ if .Date }}
+            <time>{{ .Date | time.Format "2006-01-02" }}</time>
+          {{ end }}
+        </li>
+      {{ end }}
+    </ul>
+  {{ end }}
+
+  {{ $romanPages := where $allPages "Params.categories" "intersect" (slice "罗马神话") }}
+  {{ if $romanPages }}
+    <h2 id="罗马神话">罗马神话</h2>
+    <ul>
+      {{ range $romanPages }}
         <li>
           <a href="{{ .RelPermalink }}">{{ .Title }}</a>
           {{ if .Date }}
