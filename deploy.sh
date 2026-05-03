@@ -33,6 +33,7 @@ if ! git clone --single-branch --branch "${BRANCH}" "${REMOTE}" "${DEPLOY_DIR}" 
 fi
 
 cd "${DEPLOY_DIR}"
+git checkout -B "${BRANCH}"
 
 # Clean everything except .git
 find . -maxdepth 1 -not -name '.git' -not -name '.' -delete
@@ -47,7 +48,7 @@ if git diff --cached --quiet; then
   echo_info "没有新内容需要部署"
 else
   git commit -m "Deploy: $(date +'%Y-%m-%d %H:%M:%S')"
-  git push origin "${BRANCH}" --force
+  git push origin "HEAD:${BRANCH}" --force
   echo_info "部署已推送到 ${REMOTE}"
 fi
 

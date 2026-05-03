@@ -1,0 +1,4 @@
+.is-home article p {
+  text-align: justify;
+  text-justify: inter-ideograph;
+}

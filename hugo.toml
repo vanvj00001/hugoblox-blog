@@ -1,6 +1,6 @@
 baseURL = "https://vanvj00001.github.io/hugoblox-blog/"
 title = "神话传说"
-theme = "PaperMod"
+theme = "ananke"
 languageCode = "zh-cn"
 defaultContentLanguage = "zh-cn"
 disablPathToLower = true
@@ -9,14 +9,22 @@ enableGitInfo = false
 [markup]
   [markup.goldmark.renderer]
     unsafe = true
+    hardWrap = true
 
 [params]
   BookSection = "posts"
+  custom_css = ["home-typography.css"]
   description = "神话传说博客"
+  date_format = "2006-01-02"
+  ShowPostNavLinks = false
   images = ["favicon.png"]
+  profilePicture = "images/profile.jpg"
+  [params.ananke]
+    show_recent_posts = false
+    [params.ananke.home]
+      content_alignment = "left"
   
-  [params.author]
-    name = "老梵"
+
   
   [params.toha]
     enableThemeToggle = true
@@ -39,4 +47,3 @@ enableGitInfo = false
     name = '关于'
     url = '/about/'
     weight = 4
-
