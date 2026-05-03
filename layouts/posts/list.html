@@ -1,8 +1,59 @@
 {{ define "main" }}
   <h1>{{ .Title }}</h1>
+  
+  <p>欢迎来到神话传说博客！这里收录了丰富的神话故事与解析。</p>
+  
+  <h2>📚 分类浏览</h2>
   <ul>
-    {{ range .Pages }}
-      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-    {{ end }}
+    <li><strong><a href="/categories/印度神话/">印度神话</a></strong> - 湿婆、毗湿奴、梵天三大主神及其家族的故事</li>
+    <li><strong><a href="/categories/希腊神话/">希腊神话</a></strong> - 奥林匹斯众神、宙斯家族与英雄传说</li>
+    <li><strong><a href="/categories/神话学/">神话学</a></strong> - 印欧语系神话框架与比较神话学研究</li>
   </ul>
+
+  {{ $allPages := where .Site.RegularPages "Section" "posts" }}
+  
+  {{ $indiaPages := where $allPages "Params.categories" "intersect" (slice "印度神话") }}
+  {{ if $indiaPages }}
+    <h2 id="印度神话">印度神话</h2>
+    <ul>
+      {{ range $indiaPages }}
+        <li>
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          {{ if .Date }}
+            <time>{{ .Date | time.Format "2006-01-02" }}</time>
+          {{ end }}
+        </li>
+      {{ end }}
+    </ul>
+  {{ end }}
+
+  {{ $greekPages := where $allPages "Params.categories" "intersect" (slice "希腊神话") }}
+  {{ if $greekPages }}
+    <h2 id="希腊神话">希腊神话</h2>
+    <ul>
+      {{ range $greekPages }}
+        <li>
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          {{ if .Date }}
+            <time>{{ .Date | time.Format "2006-01-02" }}</time>
+          {{ end }}
+        </li>
+      {{ end }}
+    </ul>
+  {{ end }}
+
+  {{ $mythPages := where $allPages "Params.categories" "intersect" (slice "神话学") }}
+  {{ if $mythPages }}
+    <h2 id="神话学">神话学</h2>
+    <ul>
+      {{ range $mythPages }}
+        <li>
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          {{ if .Date }}
+            <time>{{ .Date | time.Format "2006-01-02" }}</time>
+          {{ end }}
+        </li>
+      {{ end }}
+    </ul>
+  {{ end }}
 {{ end }}
