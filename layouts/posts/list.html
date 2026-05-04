@@ -3,73 +3,40 @@
   
   <p>欢迎来到神话传说博客！这里收录了丰富的神话故事与解析。</p>
   
+  {{/* 从所有 posts 文章中收集分类 */}}
+  {{ $allPosts := where .Site.RegularPages "Section" "posts" }}
+  {{ $categories := slice }}
+  {{ range $allPosts }}
+    {{ range .Params.categories }}
+      {{ if not (in $categories .) }}
+        {{ $categories = $categories | append . }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+
+  {{ if $categories }}
   <h2>📚 分类浏览</h2>
   <ul>
-    <li><strong><a href="/categories/印度神话/">印度神话</a></strong> - 湿婆、毗湿奴、梵天三大主神及其家族的故事</li>
-    <li><strong><a href="/categories/希腊神话/">希腊神话</a></strong> - 奥林匹斯众神、宙斯家族与英雄传说</li>
-    <li><strong><a href="/categories/罗马神话/">罗马神话</a></strong> - 朱庇特、尼普顿、普鲁托与罗马的永恒神话</li>
-    <li><strong><a href="/categories/神话学/">神话学</a></strong> - 印欧语系神话框架与比较神话学研究</li>
+    {{ range $categories }}
+    <li><strong><a href="/categories/{{ . }}/">{{ . }}</a></strong></li>
+    {{ end }}
   </ul>
-
-  {{ $allPages := where .Site.RegularPages "Section" "posts" }}
-  
-  {{ $indiaPages := where $allPages "Params.categories" "intersect" (slice "印度神话") }}
-  {{ if $indiaPages }}
-    <h2 id="印度神话">印度神话</h2>
-    <ul>
-      {{ range $indiaPages }}
-        <li>
-          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-          {{ if .Date }}
-            <time>{{ .Date | time.Format "2006-01-02" }}</time>
-          {{ end }}
-        </li>
-      {{ end }}
-    </ul>
   {{ end }}
 
-  {{ $greekPages := where $allPages "Params.categories" "intersect" (slice "希腊神话") }}
-  {{ if $greekPages }}
-    <h2 id="希腊神话">希腊神话</h2>
+  {{ range $categories }}
+    {{ $catPages := where $allPosts "Params.categories" "intersect" (slice .) }}
+    {{ if $catPages }}
+    <h2 id="{{ . }}">{{ . }}</h2>
     <ul>
-      {{ range $greekPages }}
-        <li>
-          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-          {{ if .Date }}
-            <time>{{ .Date | time.Format "2006-01-02" }}</time>
-          {{ end }}
-        </li>
+      {{ range $catPages.ByDate.Reverse }}
+      <li>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        {{ if .Date }}
+        <time>{{ .Date | time.Format "2006-01-02" }}</time>
+        {{ end }}
+      </li>
       {{ end }}
     </ul>
-  {{ end }}
-
-  {{ $romanPages := where $allPages "Params.categories" "intersect" (slice "罗马神话") }}
-  {{ if $romanPages }}
-    <h2 id="罗马神话">罗马神话</h2>
-    <ul>
-      {{ range $romanPages }}
-        <li>
-          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-          {{ if .Date }}
-            <time>{{ .Date | time.Format "2006-01-02" }}</time>
-          {{ end }}
-        </li>
-      {{ end }}
-    </ul>
-  {{ end }}
-
-  {{ $mythPages := where $allPages "Params.categories" "intersect" (slice "神话学") }}
-  {{ if $mythPages }}
-    <h2 id="神话学">神话学</h2>
-    <ul>
-      {{ range $mythPages }}
-        <li>
-          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-          {{ if .Date }}
-            <time>{{ .Date | time.Format "2006-01-02" }}</time>
-          {{ end }}
-        </li>
-      {{ end }}
-    </ul>
+    {{ end }}
   {{ end }}
 {{ end }}
