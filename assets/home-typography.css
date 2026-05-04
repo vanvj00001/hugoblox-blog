@@ -1,4 +1,4 @@
-/* Fix homepage line overflow */
+/* Fix homepage line overflow and styling */
 
 /* Apply to main content containers */
 .main-content,
@@ -7,4 +7,19 @@
   word-break: break-word;
   overflow-wrap: anywhere;
   hyphens: auto;
+}
+
+/* Homepage post list entries - prevent text overflow */
+.home-post-item a {
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Ensure article titles don't overflow on listing pages */
+h1.f3.near-black a,
+h2.f5 a,
+h3.fw4 a {
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
