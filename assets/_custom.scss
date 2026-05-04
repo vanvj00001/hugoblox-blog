@@ -8,3 +8,90 @@
   overflow-wrap: anywhere;
   hyphens: auto;
 }
+
+/* Homepage article list styling */
+.home-post-list {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+}
+
+.home-post-list h2 {
+  font-size: 1.5rem;
+  color: #222;
+  border-bottom: 2px solid #e8e8e8;
+  padding-bottom: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.home-post-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.home-post-item a {
+  text-decoration: none;
+  color: #333;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.home-post-item a:hover {
+  color: #0366d6;
+}
+
+.home-post-item time {
+  flex-shrink: 0;
+  margin-left: 1rem;
+  white-space: nowrap;
+}
+
+/* Ensure the nested-links container doesn't cause overflow */
+.nested-copy-line-height {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Fix for .pa4-ns content overflow */
+.pa4-ns > * {
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
+
+/* Fix for ananke list page cards */
+.flex-ns .relative.bg-white {
+  min-height: 150px;
+}
+
+.flex-ns .relative.bg-white h1 {
+  font-size: 1.1rem;
+  line-height: 1.4;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Fix for long Chinese text not wrapping */
+article {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+@media (max-width: 600px) {
+  .home-post-list {
+    padding: 0.5rem 1rem;
+  }
+  
+  .home-post-item {
+    flex-direction: row;
+  }
+  
+  .home-post-item a {
+    font-size: 0.9rem;
+  }
+}
