@@ -1,0 +1,15 @@
+{
+  "name": "神话传说",
+  "short_name": "神话传说",
+  "start_url": "/hugoblox-blog/",
+  "scope": "/hugoblox-blog/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/hugoblox-blog/favicon.svg",
+      "sizes": "512x512"
+    }
+  ]
+}
