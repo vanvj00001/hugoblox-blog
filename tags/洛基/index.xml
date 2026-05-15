@@ -1,15 +1,4 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>洛基 - 标签 - 老梵的神话小站</title>
-        <link>https://vanvj00001.github.io/hugoblox-blog/tags/%E6%B4%9B%E5%9F%BA/</link>
-        <description>洛基 - 标签 - 老梵的神话小站</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 07 May 2026 10:00:00 &#43;0800</lastBuildDate><atom:link href="https://vanvj00001.github.io/hugoblox-blog/tags/%E6%B4%9B%E5%9F%BA/" rel="self" type="application/rss+xml" /><item>
-    <title>北欧神话人物关系考：从世界树到诸神黄昏的谱系网络</title>
-    <link>https://vanvj00001.github.io/hugoblox-blog/posts/%E6%AC%A7%E6%B4%B2%E7%A5%9E%E8%AF%9D/nordic/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D%E4%BA%BA%E7%89%A9%E5%85%B3%E7%B3%BB%E8%80%83/</link>
-    <pubDate>Thu, 07 May 2026 10:00:00 &#43;0800</pubDate>
-    <author>老梵</author>
-    <guid>https://vanvj00001.github.io/hugoblox-blog/posts/%E6%AC%A7%E6%B4%B2%E7%A5%9E%E8%AF%9D/nordic/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D%E4%BA%BA%E7%89%A9%E5%85%B3%E7%B3%BB%E8%80%83/</guid>
-    <description><![CDATA[<h2 id="前言">前言</h2>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>洛基 - 标签 - 老梵的神话小站</title><link>https://vanvj00001.github.io/hugoblox-blog/tags/%E6%B4%9B%E5%9F%BA/</link><description>洛基 - 标签 - 老梵的神话小站</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 07 May 2026 10:00:00 +0800</lastBuildDate><atom:link href="https://vanvj00001.github.io/hugoblox-blog/tags/%E6%B4%9B%E5%9F%BA/" rel="self" type="application/rss+xml"/><item><title>北欧神话人物关系考：从世界树到诸神黄昏的谱系网络</title><link>https://vanvj00001.github.io/hugoblox-blog/posts/%E6%AC%A7%E6%B4%B2%E7%A5%9E%E8%AF%9D/nordic/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D%E4%BA%BA%E7%89%A9%E5%85%B3%E7%B3%BB%E8%80%83/</link><pubDate>Thu, 07 May 2026 10:00:00 +0800</pubDate><author>老梵</author><guid>https://vanvj00001.github.io/hugoblox-blog/posts/%E6%AC%A7%E6%B4%B2%E7%A5%9E%E8%AF%9D/nordic/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D%E4%BA%BA%E7%89%A9%E5%85%B3%E7%B3%BB%E8%80%83/</guid><description><![CDATA[<h2 id="前言">前言</h2>
 <p>北欧神话是中世纪斯堪的纳维亚地区形成的神话体系，其世界观以世界树（Yggdrasil）为核心，连接九大世界。从原初巨人伊米尔被奥丁兄弟杀死创造世界，到阿萨神族与华纳神族的战争与和解，再到洛基引发诸神黄昏（Ragnarok）的毁灭与重生，北欧神话展现了一个充满悲剧色彩、宿命论与英雄主义的独特体系。本文将系统梳理从创世到毁灭的核心人物关系，揭示北欧神话&quot;创造-繁荣-毁灭-重生&quot;的循环架构。</p>
 <h1 id="北欧神话人物关系考从世界树到诸神黄昏的谱系网络">北欧神话人物关系考：从世界树到诸神黄昏的谱系网络</h1>
 <p><strong>关键词</strong>：北欧神话、人物关系、奥丁、索尔、洛基、弗雷、弗雷娅、提尔、海姆达尔、巴德尔、维达、瓦利、赫尔、世界树、诸神黄昏、阿萨神族、华纳神族、巨人族</p>
@@ -70,15 +59,7 @@
 <li><strong>阿萨-华纳网络</strong>：奥丁（阿萨）+ 弗雷/弗雷娅（华纳）→ 战争与和解 → 两族共存</li>
 <li><strong>毁灭-重生网络</strong>：洛基 → 诸神黄昏 → 世界毁灭 → 维达/瓦利统治新世界</li>
 </ol>
-<p>这三大网络共同构成了北欧神话&quot;宿命-英雄-毁灭-重生&quot;的悲剧性循环，深刻影响了北欧文化与维京精神。</p>]]></description>
-</item>
-<item>
-    <title>洛基：北欧神话中的诡计之神</title>
-    <link>https://vanvj00001.github.io/hugoblox-blog/posts/%E6%AC%A7%E6%B4%B2%E7%A5%9E%E8%AF%9D/nordic/loki-trickster-god/</link>
-    <pubDate>Thu, 07 May 2026 01:30:00 &#43;0800</pubDate>
-    <author>老梵</author>
-    <guid>https://vanvj00001.github.io/hugoblox-blog/posts/%E6%AC%A7%E6%B4%B2%E7%A5%9E%E8%AF%9D/nordic/loki-trickster-god/</guid>
-    <description><![CDATA[<h2 id="前言">前言</h2>
+<p>这三大网络共同构成了北欧神话&quot;宿命-英雄-毁灭-重生&quot;的悲剧性循环，深刻影响了北欧文化与维京精神。</p>]]></description></item><item><title>洛基：北欧神话中的诡计之神</title><link>https://vanvj00001.github.io/hugoblox-blog/posts/%E6%AC%A7%E6%B4%B2%E7%A5%9E%E8%AF%9D/nordic/loki-trickster-god/</link><pubDate>Thu, 07 May 2026 01:30:00 +0800</pubDate><author>老梵</author><guid>https://vanvj00001.github.io/hugoblox-blog/posts/%E6%AC%A7%E6%B4%B2%E7%A5%9E%E8%AF%9D/nordic/loki-trickster-god/</guid><description><![CDATA[<h2 id="前言">前言</h2>
 <p>洛基是北欧神话中的诡计之神，法布提与劳菲之子，与奥丁结为义兄弟。他既是诸神的帮手，也是诸神黄昏的祸首，其故事充满了诡计、背叛与救赎，是北欧神话中最具复杂性的角色。本文将用故事性的笔触，带你走进洛基的诡计世界，见证他如何帮助诸神，又如何背叛他们，最终被惩罚在岩石上。</p>
 <h1 id="洛基北欧神话中的诡计之神">洛基：北欧神话中的诡计之神</h1>
 <p><strong>关键词</strong>：洛基、诡计之神、北欧神话、奥丁的结义兄弟、芬里尔、耶梦加得、海拉、诸神黄昏</p>
@@ -153,15 +134,7 @@
 <p>洛基变形为母马，引诱巨人的公马，生下八足马莱普尼尔。巨人发现后，气得直跳脚：“我的公马被你勾引走了，我要你偿命！”</p>
 <p>洛基变成母马时，对巨人说：“你的公马真帅，我能和它玩玩吗？”巨人笑着说：“当然可以，它们会生出最快的马。”</p>
 <p><strong>变形为鲑鱼</strong></p>
-<p>在巴德尔之死后，洛基变形为鲑鱼躲藏，最终被索尔抓住。索尔用网捞起鲑鱼，笑着说：“洛基，你变成鱼也逃不掉！”</p>]]></description>
-</item>
-<item>
-    <title>北欧神话总述：冰与火的史诗</title>
-    <link>https://vanvj00001.github.io/hugoblox-blog/posts/%E6%AC%A7%E6%B4%B2%E7%A5%9E%E8%AF%9D/nordic/mythology-overview/</link>
-    <pubDate>Wed, 06 May 2026 10:00:00 &#43;0800</pubDate>
-    <author>老梵</author>
-    <guid>https://vanvj00001.github.io/hugoblox-blog/posts/%E6%AC%A7%E6%B4%B2%E7%A5%9E%E8%AF%9D/nordic/mythology-overview/</guid>
-    <description><![CDATA[<h2 id="前言">前言</h2>
+<p>在巴德尔之死后，洛基变形为鲑鱼躲藏，最终被索尔抓住。索尔用网捞起鲑鱼，笑着说：“洛基，你变成鱼也逃不掉！”</p>]]></description></item><item><title>北欧神话总述：冰与火的史诗</title><link>https://vanvj00001.github.io/hugoblox-blog/posts/%E6%AC%A7%E6%B4%B2%E7%A5%9E%E8%AF%9D/nordic/mythology-overview/</link><pubDate>Wed, 06 May 2026 10:00:00 +0800</pubDate><author>老梵</author><guid>https://vanvj00001.github.io/hugoblox-blog/posts/%E6%AC%A7%E6%B4%B2%E7%A5%9E%E8%AF%9D/nordic/mythology-overview/</guid><description><![CDATA[<h2 id="前言">前言</h2>
 <p>北欧神话起源于斯堪的纳维亚半岛，与希腊、罗马神话不同，它充满了冰与火的冲突、命运的无常和英雄的悲壮。诸神居住在阿斯加德，人类居住在中庭，而死去的英雄则前往英灵殿。本文将用故事性的笔触，带你走进北欧神话的冰火世界，见证从创世到诸神黄昏的壮丽史诗。</p>
 <h1 id="北欧神话总述冰与火的史诗">北欧神话总述：冰与火的史诗</h1>
 <p><strong>关键词</strong>：北欧神话、奥丁、索尔、洛基、世界树、诸神黄昏、北欧</p>
@@ -236,7 +209,4 @@
 <p><strong>宿命与悲壮</strong></p>
 <p>北欧神话的独特之处在于：它有一个明确的结局——诸神黄昏。这种宿命论，让北欧神话充满了悲壮感与深刻性。</p>
 <p>北欧人说：“即使知道世界会毁灭，也要勇敢战斗到最后一刻。”</p>
-<p><strong>毁灭与重生</strong></p>]]></description>
-</item>
-</channel>
-</rss>
+<p><strong>毁灭与重生</strong></p>]]></description></item></channel></rss>
