@@ -1,0 +1,71 @@
+[submodule "themes/LoveIt"]
+	path = themes/LoveIt
+	url = https://github.com/dillonzq/LoveIt.git
+
+[submodule "themes/Anatole"]
+	path = themes/Anatole
+	url = https://github.com/lxndrblz/anatole.git
+
+[submodule "themes/Learn"]
+	path = themes/Learn
+	url = https://github.com/matcornic/hugo-theme-learn.git
+
+[submodule "themes/PaperMod"]
+	path = themes/PaperMod
+	url = https://github.com/adityatelange/hugo-PaperMod.git
+
+[submodule "themes/ananke"]
+	path = themes/ananke
+	url = https://github.com/budparr/gohugo-theme-ananke.git
+
+[submodule "themes/beautifulhugo"]
+	path = themes/beautifulhugo
+	url = https://github.com/halogenica/beautifulhugo.git
+
+[submodule "themes/coder"]
+	path = themes/coder
+	url = https://github.com/luizdepra/hugo-coder.git
+
+[submodule "themes/docsy"]
+	path = themes/docsy
+	url = https://github.com/google/docsy.git
+
+[submodule "themes/hello-friend-ng"]
+	path = themes/hello-friend-ng
+	url = https://github.com/rhazdon/hugo-theme-hello-friend-ng.git
+
+[submodule "themes/hugo-book"]
+	path = themes/hugo-book
+	url = https://github.com/alex-shpak/hugo-book.git
+
+[submodule "themes/hugo_book"]
+	path = themes/hugo_book
+	url = https://github.com/alex-shpak/hugo-book.git
+
+[submodule "themes/hyde"]
+	path = themes/hyde
+	url = https://github.com/spf13/hyde.git
+
+[submodule "themes/lotusdocs"]
+	path = themes/lotusdocs
+	url = https://github.com/colinwilson/lotusdocs.dev.git
+
+[submodule "themes/relearn"]
+	path = themes/relearn
+	url = https://github.com/McShelby/hugo-theme-relearn.git
+
+[submodule "themes/stack"]
+	path = themes/stack
+	url = https://github.com/CaiJimmy/hugo-theme-stack.git
+
+[submodule "themes/terminal"]
+	path = themes/terminal
+	url = https://github.com/panr/hugo-theme-terminal.git
+
+[submodule "themes/toha"]
+	path = themes/toha
+	url = https://github.com/hugo-toha/toha.git
+
+[submodule "themes/universal"]
+	path = themes/universal
+	url = https://github.com/devcows/hugo-universal-theme.git
