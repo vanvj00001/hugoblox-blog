@@ -1,0 +1,52 @@
+/* Projects can override this file. For details, see:
+   https://www.docsy.dev/docs/content/lookandfeel/#project-style-files */
+
+/* Fix homepage content overlap with fixed navbar */
+/* Ensure homepage content starts below the fixed navbar */
+/* Override footer to avoid black block */
+/* Ensure content sits below fixed navbar */
+/* Force top padding for .td-main on home page (all viewports) */
+.td-home .td-main {
+  padding-top: var(--td-navbar-min-height) !important;
+}
+
+/* Also add top padding to .td-outer as fallback */
+.td-home .td-outer {
+  padding-top: var(--td-navbar-min-height) !important;
+}
+
+/* Add top padding to .td-content on home page */
+.td-home .td-content {
+  padding-top: var(--td-navbar-min-height) !important;
+}
+
+.td-home .td-main {
+  margin-top: var(--td-navbar-min-height);
+}
+
+.td-home .td-content {
+  /* additional small spacing */
+  padding-top: 1rem;
+}
+
+.td-footer {
+  min-height: 0;
+  background: var(--bs-body-bg);
+  border-top: none;
+  padding: 0;
+}
+/* Add extra vertical spacing for homepage text */
+.td-home .td-content {
+  padding-top: 10rem; /* roughly 10 lines */
+}
+.td-home .td-outer {
+  margin-top: var(--td-navbar-min-height);
+  padding-top: 0; /* remove extra padding if any */
+}
+/* Add extra top spacing for homepage main content */
+.td-home .td-main main {
+  padding-top: calc(var(--td-main-padding-top) + 10rem);
+}
+.td-home .td-outer {
+  padding-top: 80px; /* adjust as needed for navbar height */
+}

@@ -1,0 +1,120 @@
+{{- /* Desktop header */ -}}
+<header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="{{ .Site.Home.RelPermalink }}" title="{{ .Site.Title }}">
+                {{- with .Site.Params.header.title -}}
+                    {{- with .logo -}}
+                        {{- dict "Src" . "Class" "logo" | partial "plugin/img.html" -}}
+                    {{- end -}}
+                    {{- with .pre -}}
+                        <span class="header-title-pre">{{ . | safeHTML }}</span>
+                    {{- end -}}
+                    {{- if .typeit -}}
+                        {{- $id := dict "Content" .name "Scratch" $.Scratch | partial "function/id.html" -}}
+                        <span id="{{ $id }}" class="typeit"></span>
+                        {{- dict $id (slice $id) | dict "typeitMap" | merge ($.Scratch.Get "this") | $.Scratch.Set "this" -}}
+                    {{- else -}}
+                        {{- .name -}}
+                    {{- end -}}
+                    {{- with .post -}}
+                        <span class="header-title-post">{{ . | safeHTML }}</span>
+                    {{- end -}}
+                {{- else -}}
+                    {{- .Site.Title -}}
+                {{- end -}}
+            </a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner">
+                {{- /* Deduplicate menus by URL to prevent duplicate "专题" entries */ -}}
+                {{- $seen := slice -}}
+                {{- range .Site.Menus.main -}}
+                    {{- $url := .URL | relLangURL -}}
+                    {{- with .Page -}}
+                        {{- $url = .RelPermalink -}}
+                    {{- end -}}
+                    {{- if not (in $seen $url) -}}
+                        {{- $seen = $seen | append $url -}}
+                        <a class="menu-item{{ if $.IsMenuCurrent `main` . | or ($.HasMenuCurrent `main` .) | or (eq $.RelPermalink $url) }} active{{ end }}" href="{{ $url }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if (urls.Parse $url).Host }} rel="noopener noreffer" target="_blank"{{ end }}>
+                            {{- .Pre | safeHTML }} {{ .Name }} {{ .Post | safeHTML -}}
+                        </a>
+                    {{- end -}}
+                {{- end -}}
+                {{- if .Site.Menus.main -}}
+                    <span class="menu-item delimiter"></span>
+                {{- end -}}
+
+                {{- if .Site.Params.search.enable -}}
+                    <span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="{{ .Site.Params.search.placeholder | default (T `searchPlaceholder`) }}" id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="{{ T `search` }}">
+                            <i class="fas fa-search" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="{{ T `clear` }}">
+                            <i class="fas fa-times-circle" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span>
+                {{- end -}}
+                <a href="javascript:void(0);" class="menu-item theme-switch" title="{{ T "switchTheme" }}">
+                    <i class="fas fa-adjust" aria-hidden="true"></i>
+                </a>
+                <a href="javascript:void(0);" id="opencc-btn" class="menu-item opencc-btn" onclick="toggleOpenCC()" title="繁简转换">
+                    <i class="fas fa-font" aria-hidden="true"></i>
+                </a>
+                {{- if hugo.IsMultilingual -}}
+                <a href="javascript:void(0);" class="menu-item language" title="{{ T "selectLanguage" }}">
+                    <i class="fas fa-globe" aria-hidden="true"></i>
+                    {{- .Language.LanguageName -}}
+                </a>
+                {{- end -}}
+            </div>
+        </div>
+    </div>
+</header>
+
+{{- /* Mobile header */ -}}
+<header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="{{ .Site.Home.RelPermalink }}" title="{{ .Site.Title }}">
+                    {{- .Site.Title -}}
+                </a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile">
+            {{- /* Deduplicate menus by URL to prevent duplicate "专题" entries */ -}}
+            {{- $seen := slice -}}
+            {{- range .Site.Menus.main -}}
+                {{- $url := .URL | relLangURL -}}
+                {{- with .Page -}}
+                    {{- $url = .RelPermalink -}}
+                {{- end -}}
+                {{- if not (in $seen $url) -}}
+                    {{- $seen = $seen | append $url -}}
+                    <a class="menu-item{{ if $.IsMenuCurrent `main` . | or ($.HasMenuCurrent `main` .) | or (eq $.RelPermalink $url) }} active{{ end }}" href="{{ $url }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if (urls.Parse $url).Host }} rel="noopener noreffer" target="_blank"{{ end }}>
+                        {{- .Name -}}
+                    </a>
+                {{- end -}}
+            {{- end -}}
+            <a href="javascript:void(0);" class="menu-item theme-switch" title="{{ T "switchTheme" }}">
+                <i class="fas fa-adjust" aria-hidden="true"></i>
+            </a>
+            {{- if hugo.IsMultilingual -}}
+            <a href="javascript:void(0);" class="menu-item language" title="{{ T "selectLanguage" }}">
+                <i class="fas fa-globe" aria-hidden="true"></i>
+                {{- .Language.LanguageName -}}
+            </a>
+            {{- end -}}
+        </div>
+    </div>
+</header>

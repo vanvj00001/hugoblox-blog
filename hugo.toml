@@ -1,0 +1,83 @@
+baseURL = "https://vanvj00001.github.io/hugoblox-blog/"
+title = "善智师法宝"
+description = "大善智师佛学开示，识心见性，修行解脱"
+theme = "LoveIt"
+defaultContentLanguage = "zh-cn"
+
+[languages]
+  [languages.zh-cn]
+    locale = "zh-CN"
+    disablePathToLower = true
+    enableGitInfo = false
+    buildFuture = true
+    paginate = 50
+
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+    name = "文章"
+    url = "/posts/"
+    weight = 1
+  [[menu.main]]
+    identifier = "archives"
+    name = "归档"
+    url = "/archives/"
+    weight = 2
+  [[menu.main]]
+    identifier = "categories"
+    name = "分类"
+    url = "/categories/"
+    weight = 3
+  [[menu.main]]
+    identifier = "tags"
+    name = "标签"
+    url = "/tags/"
+    weight = 4
+  [[menu.main]]
+    identifier = "search"
+    name = "搜索"
+    url = "/search/"
+    weight = 5
+  [[menu.main]]
+    identifier = "about"
+    name = "关于"
+    url = "/about/"
+    weight = 6
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+[params]
+  enableDarkMode = true
+  hideDate = true
+  paginate = 50
+  hasCJKLanguage = true
+
+  [params.home.profile]
+    title = "善智师法宝"
+    subtitle = "大善智师佛学开示，识心见性，修行解脱"
+
+  [params.author]
+    name = "老梵"
+    link = "https://vanvj00001.github.io/hugoblox-blog/"
+
+  # 搜索配置
+  [params.search]
+    enable = true
+    type = "fuse"
+    contentLength = 4000
+    placeholder = "输入关键词..."
+    maxResultLength = 10
+    highlightTag = "em"
+    absoluteURL = false
+    [params.search.fuse]
+      isCaseSensitive = false
+      minMatchCharLength = 2
+      threshold = 0.3
+      distance = 100
+      ignoreLocation = false
+
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true

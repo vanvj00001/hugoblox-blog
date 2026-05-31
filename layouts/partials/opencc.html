@@ -1,0 +1,88 @@
+{{- /*简繁转换按钮*/ -}}
+<script src="https://unpkg.com/opencc-js@1.3.1/dist/umd/full.js"></script>
+<script>
+(function() {
+  var STORAGE_KEY = 'opencc_pref';
+  var currentMode = localStorage.getItem(STORAGE_KEY) || 'cn';
+
+  function getBody() {
+    return document.querySelector('.content') || document.querySelector('#content') || document.querySelector('article') || document.body;
+  }
+
+  function getTitle() {
+    return document.querySelector('.single-title') || document.querySelector('h1');
+  }
+
+  var converter = null;
+
+  function loadConverter(mode, callback) {
+    if (converter) { callback(); return; }
+    if (typeof OpenCC === 'undefined') {
+      // wait for script load
+      var check = setInterval(function() {
+        if (typeof OpenCC !== 'undefined') {
+          clearInterval(check);
+          converter = OpenCC.Converter({ from: 'cn', to: mode === 't' ? 'tw' : 'cn' });
+          callback();
+        }
+      }, 100);
+    } else {
+      converter = OpenCC.Converter({ from: 'cn', to: mode === 't' ? 'tw' : 'cn' });
+      callback();
+    }
+  }
+
+  function convertElement(el, toText) {
+    if (!el || !toText) return;
+    var original = el.getAttribute('data-original');
+    if (!original) {
+      original = el.innerHTML;
+      el.setAttribute('data-original', original);
+    }
+    if (toText) {
+      el.innerHTML = converter(original);
+    } else {
+      el.innerHTML = original;
+    }
+  }
+
+  function applyConversion(mode) {
+    loadConverter(mode, function() {
+      var body = getBody();
+      convertElement(body, mode === 't');
+      var title = getTitle();
+      convertElement(title, mode === 't');
+    });
+  }
+
+  function updateButton(mode) {
+    var btn = document.getElementById('opencc-btn');
+    if (!btn) return;
+    if (mode === 't') {
+      btn.innerHTML = '<i class="fas fa-font" aria-hidden="true"></i> 简体';
+      btn.title = '切换到简体中文';
+    } else {
+      btn.innerHTML = '<i class="fas fa-font" aria-hidden="true"></i> 繁体';
+      btn.title = '繁體中文';
+    }
+  }
+
+  window.toggleOpenCC = function() {
+    var next = currentMode === 'cn' ? 't' : 'cn';
+    currentMode = next;
+    localStorage.setItem(STORAGE_KEY, next);
+    applyConversion(next);
+    updateButton(next);
+  };
+
+  document.addEventListener('DOMContentLoaded', function() {
+    updateButton(currentMode);
+    if (currentMode === 't') {
+      applyConversion('t');
+    }
+  });
+})();
+</script>
+<style>
+.menu-item.opencc-btn { cursor: pointer; }
+</style>
