@@ -1,0 +1,4 @@
+/* 隐藏重复的"专题"菜单项（首页链接） */
+a.menu-item[href="/hugoblox-blog/"] {
+  display: none !important;
+}
